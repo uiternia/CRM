@@ -6,11 +6,10 @@ import BreezeDropdownLink from '@/Components/DropdownLink.vue';
 import BreezeNavLink from '@/Components/NavLink.vue';
 import BreezeResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
-
 const showingNavigationDropdown = ref(false);
 </script>
-
-<template>
+    
+    <template>
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
@@ -21,7 +20,7 @@ const showingNavigationDropdown = ref(false);
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                <BreezeApplicationLogo class="block h-9 w-auto" />
+                                <BreezeApplicationLogo class="block w-20" />
                                 </Link>
                             </div>
 
@@ -30,6 +29,11 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
+                                <BreezeNavLink :href="route('purchases.create')"
+                                    :active="route().current('purchases.create')">
+                                    購入画面
+                                </BreezeNavLink>
+
                                 <BreezeNavLink :href="route('items.index')" :active="route().current('items.index')">
                                     商品管理
                                 </BreezeNavLink>
@@ -37,6 +41,7 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('customers.index')">
                                     顧客管理
                                 </BreezeNavLink>
+
                             </div>
                         </div>
 
@@ -48,7 +53,7 @@ const showingNavigationDropdown = ref(false);
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
                                                 class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                {{  $page.props.auth.user.name  }}
+                                                {{ $page.props.auth.user.name }}
 
                                                 <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20" fill="currentColor">
@@ -95,20 +100,26 @@ const showingNavigationDropdown = ref(false);
                         <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink :href="route('purchases.create')"
+                            :active="route().current('purchases.create')">
+                            購入画面
+                        </BreezeResponsiveNavLink>
+
                         <BreezeResponsiveNavLink :href="route('items.index')" :active="route().current('items.index')">
                             商品管理
                         </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('customers.index')"
-                            :active="route().current('customers.index')">
+                            :active="route().current('customer.index')">
                             顧客管理
                         </BreezeResponsiveNavLink>
+
                     </div>
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
                         <div class="px-4">
-                            <div class="font-medium text-base text-gray-800">{{  $page.props.auth.user.name  }}</div>
-                            <div class="font-medium text-sm text-gray-500">{{  $page.props.auth.user.email  }}</div>
+                            <div class="font-medium text-base text-gray-800">{{ $page.props.auth.user.name }}</div>
+                            <div class="font-medium text-sm text-gray-500">{{ $page.props.auth.user.email }}</div>
                         </div>
 
                         <div class="mt-3 space-y-1">
