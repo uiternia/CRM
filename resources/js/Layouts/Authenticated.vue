@@ -6,6 +6,7 @@ import BreezeDropdownLink from '@/Components/DropdownLink.vue';
 import BreezeNavLink from '@/Components/NavLink.vue';
 import BreezeResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
+
 const showingNavigationDropdown = ref(false);
 </script>
     
@@ -33,7 +34,10 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('purchases.create')">
                                     購入画面
                                 </BreezeNavLink>
-
+                                <BreezeNavLink :href="route('purchases.index')"
+                                    :active="route().current('purchases.index')">
+                                    購買履歴
+                                </BreezeNavLink>
                                 <BreezeNavLink :href="route('items.index')" :active="route().current('items.index')">
                                     商品管理
                                 </BreezeNavLink>
@@ -41,7 +45,9 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('customers.index')">
                                     顧客管理
                                 </BreezeNavLink>
-
+                                <!-- <BreezeNavLink :href="route('analysis')" :active="route().current('analysis')">
+                                    データ分析
+                                </BreezeNavLink> -->
                             </div>
                         </div>
 
@@ -104,7 +110,10 @@ const showingNavigationDropdown = ref(false);
                             :active="route().current('purchases.create')">
                             購入画面
                         </BreezeResponsiveNavLink>
-
+                        <BreezeResponsiveNavLink :href="route('purchases.index')"
+                            :active="route().current('purchases.index')">
+                            購買履歴
+                        </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('items.index')" :active="route().current('items.index')">
                             商品管理
                         </BreezeResponsiveNavLink>
@@ -112,7 +121,9 @@ const showingNavigationDropdown = ref(false);
                             :active="route().current('customer.index')">
                             顧客管理
                         </BreezeResponsiveNavLink>
-
+                        <!-- <BreezeResponsiveNavLink :href="route('analysis')" :active="route().current('analysis')">
+                            データ分析
+                        </BreezeResponsiveNavLink> -->
                     </div>
 
                     <!-- Responsive Settings Options -->
